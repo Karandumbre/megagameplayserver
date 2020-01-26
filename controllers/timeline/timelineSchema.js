@@ -13,7 +13,22 @@ var TimelineSchema = new Schema({
     }
 });
 
+
+var EventDatesSchema = new Schema({
+    title: {
+        type: String
+    },
+    date: {
+        type: Date
+    },
+    game: {
+        type: String
+    }
+})
 // Compile model from schema
 var TimelineSchemaJson = mongoose.model('TimelineSchemaJson', TimelineSchema, 'timeline');
-
-module.exports = TimelineSchemaJson;
+var EventDatesJson = mongoose.model('EventDatesJson', EventDatesSchema, 'eventdates')
+module.exports = {
+    TimelineSchemaJson: TimelineSchemaJson,
+    EventDatesJson: EventDatesJson,
+};
